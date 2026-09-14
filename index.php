@@ -1,3 +1,7 @@
+<?php
+require_once "auth.php";
+require_once "config.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,6 +11,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
+    
+    <!-- Barra Superior / Header de Autenticação -->
+    <header class="bg-slate-900 text-white border-b border-slate-800">
+        <div class="max-w-5xl mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-building text-blue-500"></i>
+                <span class="font-bold text-sm tracking-wide">Sistema da Empresa</span>
+            </div>
+            <div class="flex items-center gap-4 text-sm">
+                <span class="text-slate-300">Olá, <strong class="text-white"><?php echo htmlspecialchars($_SESSION["admin_nome"]); ?></strong></span>
+                <a href="logout.php" class="bg-slate-800 hover:bg-red-600 text-slate-300 hover:text-white px-3 py-1.5 rounded-md transition duration-150 flex items-center gap-1.5 text-xs font-semibold">
+                    <i class="fa fa-right-from-bracket"></i> Sair
+                </a>
+            </div>
+        </div>
+    </header>
+
     <div class="max-w-5xl mx-auto my-10 p-6 bg-white rounded-xl shadow-sm border border-gray-200">
         <div class="flex justify-between items-center mb-6 pb-4 border-b border-gray-200">
             <h2 class="text-2xl font-bold text-gray-800">Detalhes dos Funcionários</h2>
@@ -16,9 +37,6 @@
         </div>
 
         <?php
-        require_once "config.php";
-        
-        // Consulta com JOIN para trazer o nome do Setor
         $sql = "SELECT f.*, s.nome AS setor_nome 
                 FROM funcionarios f 
                 INNER JOIN setores s ON f.setor_id = s.id 
@@ -53,9 +71,9 @@
                     echo '<td class="px-4 py-3">' . htmlspecialchars($row['endereco']) . '</td>';
                     echo '<td class="px-4 py-3">R$ ' . number_format($row['salario'], 2, ',', '.') . '</td>';
                     echo '<td class="px-4 py-3 text-center space-x-3">';
-                    echo '<a href="read.php?id='. $row['id'] .'" class="text-blue-600 hover:text-blue-800" title="Visualizar"><i class="fa fa-eye"></i></a>';
-                    echo '<a href="update.php?id='. $row['id'] .'" class="text-amber-600 hover:text-amber-800" title="Editar"><i class="fa fa-pencil"></i></a>';
-                    echo '<a href="delete.php?id='. $row['id'] .'" class="text-red-600 hover:text-red-800" title="Excluir"><i class="fa fa-trash"></i></a>';
+                    echo '<a href="read.php?id='. $row['id'] .'" class="text-blue-600 hover:text-blue-800"><i class="fa fa-eye"></i></a>';
+                    echo '<a href="update.php?id='. $row['id'] .'" class="text-amber-600 hover:text-amber-800"><i class="fa fa-pencil"></i></a>';
+                    echo '<a href="delete.php?id='. $row['id'] .'" class="text-red-600 hover:text-red-800"><i class="fa fa-trash"></i></a>';
                     echo '</td>';
                     echo '</tr>';
                 }
@@ -65,12 +83,9 @@
                 echo '</div>';
                 mysqli_free_result($result);
             } else {
-                echo '<div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">Nenhum registro foi encontrado.</div>';
+                echo '<div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">Nenhum registro encontrado.</div>';
             }
-        } else {
-            echo '<div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">Ops! Algo deu errado. Por favor, tente novamente mais tarde.</div>';
         }
-
         mysqli_close($link);
         ?>
     </div>

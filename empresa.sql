@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14-Set-2026 às 15:21
+-- Tempo de geração: 14-Set-2026 às 16:12
 -- Versão do servidor: 10.4.32-MariaDB
 -- versão do PHP: 8.2.12
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `empresa`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `administradores`
+--
+
+CREATE TABLE `administradores` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `criado_em` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `administradores`
+--
+
+INSERT INTO `administradores` (`id`, `nome`, `email`, `senha`, `criado_em`) VALUES
+(2, 'Administrador', 'admin@empresa.com', '$2y$10$v53gCwRb4hdCMVKEWZpWaOVg3/YpAgELmPu8A4jUlx8ysYkX9wMW2', '2026-09-14 11:08:54');
 
 -- --------------------------------------------------------
 
@@ -71,6 +92,13 @@ INSERT INTO `setores` (`id`, `nome`) VALUES
 --
 
 --
+-- Índices para tabela `administradores`
+--
+ALTER TABLE `administradores`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- Índices para tabela `funcionarios`
 --
 ALTER TABLE `funcionarios`
@@ -86,6 +114,12 @@ ALTER TABLE `setores`
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `administradores`
+--
+ALTER TABLE `administradores`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `funcionarios`

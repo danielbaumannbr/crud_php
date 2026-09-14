@@ -1,4 +1,5 @@
 <?php
+require_once "auth.php";
 require_once "config.php";
  
 $nome = $endereco = $salario = $foto = $setor_id = "";

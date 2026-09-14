@@ -1,4 +1,5 @@
 <?php
+require_once "auth.php";
 if (isset($_POST["id"]) && !empty($_POST["id"])) {
     require_once "config.php";
     
