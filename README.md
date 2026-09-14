@@ -1,10 +1,10 @@
-# 🚀 Sistema de Gerenciamento de Funcionários e Setores (PHP + MySQL)
+#  Sistema de Gerenciamento de Funcionários e Setores (PHP + MySQL)
 
 Um sistema **CRUD** completo e seguro para gerenciamento de funcionários, com controle de acesso para administradores, upload de fotos de perfil, banco de dados relacional e interface moderna desenvolvida com **Tailwind CSS**.
 
 ---
 
-## ✨ Funcionalidades
+##  Funcionalidades
 
 * **Sistema de Autenticação Seguro:** Tela de login para administradores com senhas criptografadas (`password_hash` / `password_verify`) e proteção de rotas via Sessões PHP (`auth.php`).
 * **Gerenciamento de Funcionários:** Criar, listar, visualizar, editar e remover registros.
@@ -15,7 +15,7 @@ Um sistema **CRUD** completo e seguro para gerenciamento de funcionários, com c
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 * **Linguagem:** PHP 8.x
 * **Banco de Dados:** MySQL / MariaDB
@@ -25,7 +25,7 @@ Um sistema **CRUD** completo e seguro para gerenciamento de funcionários, com c
 
 ---
 
-## 🗄️ Estrutura do Banco de Dados
+##  Estrutura do Banco de Dados
 
 O banco de dados é composto por três tabelas interligadas:
 
