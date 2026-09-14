@@ -34,6 +34,10 @@ require_once "config.php";
             <a href="create.php" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-2 rounded-lg transition inline-flex items-center gap-2 shadow-sm">
                 <i class="fa fa-plus"></i> Adicionar Novo Funcionário
             </a>
+            <a href="create_setor.php" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg transition inline-flex items-center gap-2 shadow-sm">
+                <i class="fa fa-plus"></i> Adicionar Novo Setor
+            </a>
+          
         </div>
 
         <?php
