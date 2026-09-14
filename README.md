@@ -1,10 +1,10 @@
-# 🚀 Sistema de Gerenciamento de Funcionários (PHP + MySQL + Tailwind CSS)
+#  Sistema de Gerenciamento de Funcionários (PHP + MySQL + Tailwind CSS)
 
 Um sistema **CRUD** (Create, Read, Update, Delete) completo e responsivo para gerenciamento de funcionários, construído em PHP nativo utilizando declarações preparadas (`MySQLi`), banco de dados relacional e interface estilizada com **Tailwind CSS**.
 
 ---
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 * **Gerenciamento Completo de Funcionários:** Criar, listar, visualizar, editar e remover registros.
 * **Upload de Fotos de Perfil:** Envio e armazenamento de fotos no formulário de cadastro/edição, com substituição automática de arquivos antigos e suporte a formatos de imagem (`jpg`, `jpeg`, `png`, `webp`).
@@ -14,7 +14,7 @@ Um sistema **CRUD** (Create, Read, Update, Delete) completo e responsivo para ge
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 * **Linguagem:** PHP 8.x
 * **Banco de Dados:** MySQL / MariaDB
@@ -24,7 +24,7 @@ Um sistema **CRUD** (Create, Read, Update, Delete) completo e responsivo para ge
 
 ---
 
-## 🗄️ Estrutura do Banco de Dados
+##  Estrutura do Banco de Dados
 
  O sistema utiliza duas tabelas relacionadas:
 
